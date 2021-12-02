@@ -1,0 +1,16 @@
+// contracts/GameItems.sol
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.7;
+
+import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
+
+contract GameItems is ERC1155{
+    //setting the NFT in slot 0, could set a token in slot 1 after this
+    uint256 public constant Yield_NFT = 0;
+
+    constructor() public ERC1155(/*create IPFS account and put the uri here, in json format*/) {
+        //minting 100 Yield_NFT
+        _mint(msg.sender, Yield_NFT, 100, "");
+
+    }
+}
